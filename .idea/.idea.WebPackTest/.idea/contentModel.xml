@@ -3,7 +3,9 @@
   <component name="ContentModelStore">
     <e p="C:\Users\Admin\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_WebPackTest.790020110.00" t="ExcludeRecursive" />
     <e p="C:\Users\Admin\RiderProjects\WebPackTest" t="IncludeFlat">
+      <e p=".gitignore" t="Include" />
       <e p="packages" t="ExcludeRecursive" />
+      <e p="SolutionFolder" t="Include" />
       <e p="WebPackTest" t="IncludeRecursive">
         <e p="App_Start" t="Include">
           <e p="RouteConfig.cs" t="Include" />
@@ -21,6 +23,7 @@
         <e p="Global.asax.cs" t="Include" />
         <e p="index.ts" t="Include" />
         <e p="Models" t="Include" />
+        <e p="node_modules" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="package.json" t="Include" />
         <e p="packages.config" t="Include" />

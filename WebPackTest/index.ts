@@ -1,9 +1,10 @@
+import * as _ from "underscore";
 export module Test{
     export class C1{
         constructor(){}
         
         Log(){
-            console.log("Test")
+            console.log("Test",_.range(0,10))
         };
     } 
 }

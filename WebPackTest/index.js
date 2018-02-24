@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const _ = require("underscore");
 var Test;
 (function (Test) {
     class C1 {
         constructor() { }
         Log() {
-            console.log("Test");
+            console.log("Test", _.range(0, 10));
         }
         ;
     }
