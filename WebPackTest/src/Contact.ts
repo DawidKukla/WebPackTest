@@ -3,7 +3,7 @@ import "bootstrap";
 import "jquery"
 
 export module ContctModule{
-    export class Contct{
+    export class Contact{
         constructor(){
            
         }
@@ -14,6 +14,6 @@ export module ContctModule{
     }
 }
 
-import Index = ContctModule.Contct;
+import Index = ContctModule.Contact;
 var contact=new Index();
 contact.Log();

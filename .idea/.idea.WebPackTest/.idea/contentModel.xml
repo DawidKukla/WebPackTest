@@ -16,7 +16,9 @@
         <e p="Controllers" t="Include">
           <e p="HomeController.cs" t="Include" />
         </e>
-        <e p="dist" t="Include" />
+        <e p="dist" t="Include">
+          <e p="bundle.js" t="Include" />
+        </e>
         <e p="favicon.ico" t="Include" />
         <e p="Global.asax" t="Include" />
         <e p="Global.asax.cs" t="Include" />

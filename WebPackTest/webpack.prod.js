@@ -1,4 +1,3 @@
-const path = require("path");
 const webpack = require("webpack");
 const Merge = require("webpack-merge");
 const CommonConfig = require("./webpack.common.js");
@@ -9,15 +8,11 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // Code splitting: https://webpack.js.org/guides/code-splitting
 // Caching: https://webpack.js.org/guides/caching/
 
-const extractLess = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css"
-});
 
 module.exports = Merge(CommonConfig, {
     devtool: "hidden-source-map",
 
     entry: {
-        index: path.resolve(__dirname, 'src/index.ts'),
         vendor: [
             "jquery",
             "jquery-validation",
@@ -27,39 +22,8 @@ module.exports = Merge(CommonConfig, {
     },
 
     output: {
-        filename: "[name].[chunkhash].js",
-        path: __dirname + "/dist",
-        // Making sure the CSS and JS files that are split out do not break the template cshtml.
-        publicPath: "/dist/",
-        // Defining a global var that can used to call functions from within ASP.NET Razor pages.
-        library: "aspAndWebpack",
-        libraryTarget: "var"
-    },
-
-    module: {
-        loaders: [
-            // All css files will be handled here
-            {
-                test: /\.css$/,
-                use: extractLess.extract({ fallback: "style-loader", use: ["css-loader"] })
-            },
-
-            // All files with ".less" will be handled and transpiled to css
-            {
-                test: /\.less$/,
-                use: extractLess.extract({
-                    use: [{
-                        loader: "css-loader", options: {
-                            sourceMap: true
-                        }
-                    }, {
-                        loader: "less-loader", options: {
-                            sourceMap: true
-                        }
-                    }]
-                })
-            },
-        ]
+        filename: "[name].v6.2.1.4.js"
+        
     },
 
     plugins: [
@@ -69,19 +33,19 @@ module.exports = Merge(CommonConfig, {
             }
         }),
 
-        // Split out library into seperate bundle and remove from app bundle.
-        new webpack.HashedModuleIdsPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "vendor"
-        }),
-
-        // Webpack boilerplate and manifest in seperate file.
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "runtime"
-        }),
+        // // Split out library into seperate bundle and remove from app bundle.
+        // new webpack.HashedModuleIdsPlugin(),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: "vendor"
+        // }),
+        //
+        // // Webpack boilerplate and manifest in seperate file.
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: "runtime"
+        // }),
 
         // Write out CSS bundle to its own file:
-        extractLess,
+       /* extractLess,*/
 
         new webpack.LoaderOptionsPlugin({
             minimize: true,

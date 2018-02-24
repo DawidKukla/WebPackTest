@@ -1,10 +1,22 @@
+const path = require("path");
 const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 // const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     target: "web",
-
+    entry: {
+        index: path.resolve(__dirname, "src/index.ts"),
+        contact: path.resolve(__dirname, "src/contact.ts")
+    },
+    output: {
+        // Making sure the CSS and JS files that are split out do not break the template cshtml.
+        publicPath: "/dist/",
+        path: path.resolve(__dirname + "/dist"),
+        // Defining a global var that can used to call functions from within ASP.NET Razor pages.
+        library: "WebPackTest",
+        libraryTarget: "var"
+    },
     resolve: {
         // Add ".ts" and ".tsx" as resolvable extensions.
         extensions: [".ts", ".tsx", ".js", ".json", ".html"],
@@ -37,7 +49,19 @@ module.exports = {
             { test: /\.html$/, loader: "html-loader" },
 
             // All output ".js" files will have any sourcemaps re-processed by "source-map-loader".
-            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+
+            // All css files will be handled here
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"]
+            },
+
+            // All files with ".less" will be handled and transpiled to css
+            {
+                test: /\.less$/,
+                use: ["style-loader", "css-loader", "less-loader"]
+            }
         ]
     },
 
