@@ -87,21 +87,27 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\site.css" />
+    <Content Include="dist\bundle.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="index.ts" />
+    <Content Include="nodeTest.ts" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
+    <Content Include="src\index.less" />
+    <Content Include="src\index.ts" />
     <Content Include="tsconfig.json" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout_Template.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Web.config" />
+    <Content Include="webpack.common.js" />
+    <Content Include="webpack.dev.js" />
+    <Content Include="webpack.prod.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content" />
