@@ -1,6 +1,6 @@
 const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     target: "web",
@@ -57,11 +57,11 @@ module.exports = {
         // avoid publishing when compilation failed.
         new webpack.NoEmitOnErrorsPlugin(),
 
-        new HtmlWebpackPlugin({
+       /* new HtmlWebpackPlugin({
             inject: "body",
             filename: "../Views/Shared/_Layout.cshtml",
             template: "./Views/Shared/_Layout_Template.cshtml"
-        })
+        })*/
     ]),
 
     // pretty terminal output

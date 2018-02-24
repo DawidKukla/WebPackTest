@@ -16,9 +16,7 @@
         <e p="Controllers" t="Include">
           <e p="HomeController.cs" t="Include" />
         </e>
-        <e p="dist" t="Include">
-          <e p="bundle.js" t="Include" />
-        </e>
+        <e p="dist" t="Include" />
         <e p="favicon.ico" t="Include" />
         <e p="Global.asax" t="Include" />
         <e p="Global.asax.cs" t="Include" />
@@ -32,6 +30,7 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="src" t="Include">
+          <e p="Contact.ts" t="Include" />
           <e p="index.less" t="Include" />
           <e p="index.ts" t="Include" />
         </e>
@@ -54,6 +53,7 @@
         <e p="webpack.common.js" t="Include" />
         <e p="webpack.dev.js" t="Include" />
         <e p="webpack.prod.js" t="Include" />
+        <e p="WebPackReferenceHelper.cs" t="Include" />
         <e p="WebPackTest.csproj" t="IncludeRecursive" />
       </e>
       <e p="WebPackTest.sln" t="IncludeFlat" />

@@ -6,18 +6,18 @@ const CommonConfig = require("./webpack.common.js");
 module.exports = Merge(CommonConfig, {
     devtool: "inline-source-map",
 
-    entry: path.resolve(__dirname, "src/index.ts"),
-
+    entry: {
+        index: path.resolve(__dirname, "src/index.ts"),
+        contact: path.resolve(__dirname, "src/contact.ts")
+    },
     output: {
-        filename: "bundle.js",
-        path: __dirname + "/dist",
-        // Making sure the CSS and JS files that are split out do not break the template cshtml.
         publicPath: "/dist/",
-        // Defining a global var that can used to call functions from within ASP.NET Razor pages.
+        path: path.resolve(__dirname + "/dist"),
+        filename: '[name].js',
         library: "aspAndWebpack",
         libraryTarget: "var"
     },
-
+    
     module: {
         loaders: [
             // All css files will be handled here
