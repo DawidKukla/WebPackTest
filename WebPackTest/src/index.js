@@ -10,7 +10,7 @@ var IndexModule;
         }
         Log() {
             $(".navbar").css({ "background-color": "red" });
-            console.log("XXXXXXXX");
+            console.log("Index");
         }
     }
     IndexModule.Index = Index;

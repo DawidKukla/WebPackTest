@@ -9,7 +9,7 @@ export module ContctModule{
         }
         Log(){
             $(".navbar").css({"background-color":"red"});
-            console.log("XXXXXXXX")
+            console.log("Contact")
         }
     }
 }
