@@ -3,6 +3,10 @@
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
+section stylesheets
+{
+@Html.WebPackCssReference("contact")
+}
 @section scripts {
-    @Html.WebPackReference("contact.js");
+    @Html.WebPackJsReference("contact")
 }
