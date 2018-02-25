@@ -1,15 +1,25 @@
 import "./index.less";
 import "bootstrap";
 import "jquery"
+import "bluebird";
+
 
 export module IndexModule{
     export class Index{
         constructor(){
            
         }
-        Log(){
+        async Log(){
             $(".navbar").css({"background-color":"red"});
             console.log("Index")
+            await this.Wait(5000);
+            console.log("after waiting")
+        }
+        
+        public async Wait(timeout:number){
+            return new Promise((resolve)=>{
+                window.setTimeout(()=>resolve(),timeout);
+            });
         }
     }
 }
