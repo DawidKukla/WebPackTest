@@ -106,11 +106,11 @@ namespace WebPackTest
                 if (IsProduction)
                     chunks.AddRange(new ChunkBase[]
                     {
-                        new ScriptChunk("runtime.js", Version.ToString()),
+                        new ScriptChunk("manifest.js", Version.ToString()),
                         new ScriptChunk("vendor.js", Version.ToString()),
                         new StyleSheetChunk("vendor.css", Version.ToString()),
                         new ScriptChunk($"{_entryName}.js", Version.ToString()),
-                        new StyleSheetChunk($"{_entryName}.css", Version.ToString())
+                       // new StyleSheetChunk($"{_entryName}.css", Version.ToString())
                     });
                 else
                     chunks.Add(new ScriptChunk($"{_entryName}.js", null));

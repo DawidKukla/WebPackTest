@@ -5,14 +5,15 @@ require("bootstrap");
 require("jquery");
 var ContctModule;
 (function (ContctModule) {
-    class Contact {
-        constructor() {
+    var Contact = /** @class */ (function () {
+        function Contact() {
         }
-        Log() {
+        Contact.prototype.Log = function () {
             $(".navbar").css({ "background-color": "red" });
             console.log("Contact");
-        }
-    }
+        };
+        return Contact;
+    }());
     ContctModule.Contact = Contact;
 })(ContctModule = exports.ContctModule || (exports.ContctModule = {}));
 var Index = ContctModule.Contact;

@@ -5,14 +5,15 @@ require("bootstrap");
 require("jquery");
 var IndexModule;
 (function (IndexModule) {
-    class Index {
-        constructor() {
+    var Index = /** @class */ (function () {
+        function Index() {
         }
-        Log() {
+        Index.prototype.Log = function () {
             $(".navbar").css({ "background-color": "red" });
             console.log("Index");
-        }
-    }
+        };
+        return Index;
+    }());
     IndexModule.Index = Index;
 })(IndexModule = exports.IndexModule || (exports.IndexModule = {}));
 var Index = IndexModule.Index;

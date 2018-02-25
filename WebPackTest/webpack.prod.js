@@ -34,13 +34,13 @@ module.exports = Merge(CommonConfig, {
             // All css files will be handled here
             {
                 test: /\.css$/,
-                use: extractLess.extract({ fallback: "style-loader", use: ["css-loader"] })
+                use: ExtractTextPlugin.extract({ fallback: "style-loader", use: ["css-loader"] })
             },
 
             // All files with ".less" will be handled and transpiled to css
             {
                 test: /\.less$/,
-                use: extractLess.extract({
+                use: ExtractTextPlugin.extract({
                     use: [{
                         loader: "css-loader", options: {
                             sourceMap: true
@@ -62,20 +62,23 @@ module.exports = Merge(CommonConfig, {
             }
         }),
 
+       
         // Split out library into seperate bundle and remove from app bundle.
         //new webpack.HashedModuleIdsPlugin(),
+
+              
         new webpack.optimize.CommonsChunkPlugin({
             name: "vendor"
         }),
 
         // Webpack boilerplate and manifest in seperate file.
         new webpack.optimize.CommonsChunkPlugin({
-            name: "runtime"
+            name: "manifest"
         }),
 
         // Write out CSS bundle to its own file:
         extractLess,
-
+        
         new webpack.LoaderOptionsPlugin({
             minimize: true,
             debug: false
